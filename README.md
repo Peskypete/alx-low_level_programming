@@ -1,2 +1,2 @@
 #!/bin/bash
-WUEH
+BUT ITS NOT EMPTY
