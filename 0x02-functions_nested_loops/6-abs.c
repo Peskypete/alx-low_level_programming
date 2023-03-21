@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *_abs: computes the absolute value of numbers
+ *_abs - computes the absolute value of numbers
  *@n: the number to be computed
  *Return: The absolute value of a number
  */
