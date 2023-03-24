@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *print_line - prints line of length n
+ *print_diagonal - prints line of length n
  *@n: The length of the line by multiplying _
  *Return: void... nothing
  */
@@ -12,8 +12,9 @@ void print_diagonal(int n)
 	if (n <= 0)
 	{
 	_putchar('\n');
-	return;
 	}
+	else
+	{
 	for (i = 0; i < n; i++)
 	{
 	int j;
@@ -24,5 +25,6 @@ void print_diagonal(int n)
 	}
 	_putchar(92);
 	_putchar('\n');
+	}
 	}
 }
