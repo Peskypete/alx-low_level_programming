@@ -2,7 +2,7 @@
 
 /**
  * main - check the code
- *
+ *void: no parameters
  * Return: Always 0.
  */
 int main(void)
