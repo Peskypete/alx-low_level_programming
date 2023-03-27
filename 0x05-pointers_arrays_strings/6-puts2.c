@@ -2,14 +2,18 @@
 #include <string.h>
 /**
  * puts2 - prints half the string
- * @*s: the string
+ * @str: the string
  * Return: 0 always success
  */
 void puts2(char *str)
 {
-	int j, i;
+	int j;
+	int i = 0;
 
-	i = strlen(str);
+	while (str[i] != '\0')
+	{
+	i++;
+	}
 
 	for (j = 0; j <= i; j += 2)
 	{
