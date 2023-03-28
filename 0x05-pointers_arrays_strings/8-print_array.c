@@ -1,31 +1,21 @@
 #include <stdio.h>
+
 /**
  *print_array - prints array contents
- *@a: pointer 
- *n:number of variable values to be printed
+ *@a: pointer of array
+ *@n:number of variable values to be printed
  */
 void print_array(int *a, int n)
 {
-	int c;
-	if (n > 0)
+	int index_of_array;
+
+	for (index_of_array = 0; index_of_array < n; index_of_array++)
 	{
-	for (c = 0; c < n; c++)
+	printf("%d", a[index_of_array]);
+	if (index_of_array != (n - 1))
 	{
-	if (c == n - 1)
-	{
-	printf("%d\n", a[c]);
-	}
-	else
-	{
-	printf("%d, ", a[c]);
+	printf(", ");
 	}
 	}
-	}
-	else
-	{
-	for (; n <= 0; n++)
-	{
-	printf("%d", a[n]);
-	}
-	}
+	putchar('\n');
 }
