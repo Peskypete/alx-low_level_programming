@@ -3,7 +3,7 @@
 
 /**
  * _strcat - appends content of string 2 to 1
- * @dest: the destination 
+ * @dest: the destination
  * @src: the string to be copied
  * Return: a pointer to dest
  */
@@ -18,5 +18,5 @@ char *_strcat(char *dest, char *src)
 
 	z++;
 	dest[dest_len + z] = src[z];
-	return dest;
+	return (dest);
 }
