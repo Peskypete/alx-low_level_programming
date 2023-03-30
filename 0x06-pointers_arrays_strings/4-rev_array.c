@@ -1,22 +1,20 @@
 #include "main.h"
-
 /**
- * reverse_array - reverses array of type int
- * @a: the array
- * @n: number of elements in array
+ * reverse_array - reverse array of integers
+ * @a: array
+ * @n: number of elements of array
+ *
  * Return: void
  */
 void reverse_array(int *a, int n)
 {
-	int z;
-	int index = n - 1;
-	int half = n / 2;
+	int i;
+	int t;
 
-	for (z = 0; z <= half; z++)
+	for (i = 0; i < n--; i++)
 	{
-	int j = a[z];
-
-	a[z] = a[index - z];
-	a[index - z] = j;
+		t = a[i];
+		a[i] = a[n];
+		a[n] = t;
 	}
 }
