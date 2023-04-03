@@ -1,7 +1,7 @@
 #include "main.h"
 #include <string.h>
 /**
- * _strspn: checks for characters present in accept at string s
+ * _strspn - checks for characters present in accept at string s
  * @accept: The string to use to compare
  * @s: the string to check
  * Return: number of bytes in s that match the bytes in s

@@ -1,7 +1,7 @@
 #include "main.h"
 #include <string.h>
 /**
- * _strpbrk - searches for the firsletter in string s that is in accept 
+ * _strpbrk - searches for the firsletter in string s that is in accept
  * @accept: the string with letters to check
  * @s: the string to check
  * Return: a pointer to s
