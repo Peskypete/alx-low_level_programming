@@ -1,37 +1,50 @@
 #include "main.h"
-#include <math.h>
 /**
- * _sqrt_recursion - returns the natural squareroot
- * @n: The number to be manipulated
- * Return: natural squareroot of a number n,else -1
+ * square_root - calculates squareroot
+ * @n: integer passed from main file
+ * @start:
+ * @end:
+ * Return: squareroot of number passed
  */
-int sumdigits(int a);
-int _sqrt_recursion(int n)
+int square_root(int n, int start, int end)
 {
-	int sum = sumdigits(n);
-
-	if (sum == 1 || sum == 4 || sum == 7 || sum == 9)
+	int mid = (start + end) / 2;
+	int square = mid * mid;
+	if (start > end)
 	{
-		return (sqrt(n));
+	return -1;
+	}
+
+	if (square == n)
+	{
+	return mid;
+	}
+	else if (square < n)
+	{
+	return square_root(n, mid + 1, end);
 	}
 	else
 	{
-		return (-1);
+	return square_root(n, start, mid - 1);
 	}
 }
-int sumdigits(int a)
+/**
+ * _sqrt_recursion - uses recursion to call the squareroot function
+ * @n: number passed to be manipulated
+ * Return: natural squareroot, -1 if base is less than
+ */
+int _sqrt_recursion(int n)
 {
-	int sum;
-
-	if (a == 0)
+	if (n < 0)
 	{
-	return (0);
+        return -1;
+	}
+	else if (n == 0 || n == 1)
+	{
+	return n;
 	}
 	else
 	{
-	int lastdigit = a % 10;
-	int remainingdigits = a / 10;
-	sum = lastdigit + sumdigits(remainingdigits);
+	return square_root(n, 1, n / 2);
 	}
-	return (sum);
 }
