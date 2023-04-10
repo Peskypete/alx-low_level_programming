@@ -10,9 +10,9 @@ int main(int argc, char *argv[])
 {
 	int a, b, mul;
 
-	if (argc != 3)
+	if (argc != 3 || argv[2] == NULL)
 	{
-	printf("Error");
+	printf("Error\n");
 	}
 	a = atoi(argv[1]);
 	b = atoi(argv[2]);
