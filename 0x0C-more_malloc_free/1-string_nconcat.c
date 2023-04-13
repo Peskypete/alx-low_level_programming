@@ -10,8 +10,8 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *s;
-
+	size_t s1_len, s2_len;
+	char *result;
 	if (s1 == NULL)
 	{
 	s1 = "";
@@ -20,20 +20,21 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 	s2 = "";
 	}
-	s = (char *)malloc((strlen(s1) + strlen(s2) + 1) * sizeof(char));
+	s1_len = strlen(s1);
+	s2_len = strlen(s2);
 
-	if (s == NULL)
+	if (n >= s2_len)
+	{
+	n = s2_len;
+	}
+	result = (char*)malloc(sizeof(char) * (s1_len + n + 1));
+
+	if (result == NULL)
 	{
 	return (NULL);
 	}
-	strcpy(s, s1);
-	if (n >= strlen(s2))
-	{
-	strcat(s, s2);
-	}
-	else
-	{
-	strncat(s, s2, n);
-	}
-	return (s);
+	memcpy(result, s1, s1_len);
+	memcpy(result + s1_len, s2, n);
+	result[s1_len + n] = '\0';
+	return (result);
 }
