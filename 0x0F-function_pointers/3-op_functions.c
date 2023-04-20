@@ -1,4 +1,9 @@
 #include "function_pointers.h"
+int op_add(int num1, int num2);
+int op_sub(int num1, int num2);
+int op_mul(int num1, int num2);
+int op_div(int num1, int num2);
+int op_mod(int num1, int num2);
 /**
  * op_add - adds to ints
  * @num1: the first number

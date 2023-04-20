@@ -21,20 +21,17 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 	operator = argv[2];
-	if (*operator != '+' ||
-		*operator != '-' ||
-		*operator != '%' ||
-		*operator != '*' ||
-		*operator != '/')
+	if (get_op_func(operator) == NULL || operator[1] != '\0')
 	{
-		printf("Error\n");
-		exit(99);
+	printf("Error\n");
+	exit(99);
 	}
-	if (*operator == '/' && num2 == 0)
+	if ((*operator == '/' && num2 == 0) ||
+		(*operator == '%' && num2 == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	get_op_func(operator)(num1, num2);
+	printf("%d\n", get_op_func(operator)(num1, num2));
 	return (0);
 }
