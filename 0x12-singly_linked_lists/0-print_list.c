@@ -12,6 +12,11 @@ size_t print_list(const list_t *h)
 	unsigned int i = 0;
 	const list_t *temp = h;
 
+	if (h == NULL)
+	{
+		printf("%d", i);
+		return (i);
+	}
 	while (temp != NULL)
 	{
 		i++;
