@@ -10,11 +10,8 @@
 size_t print_list(const list_t *h)
 {
 	unsigned int i = 0;
-	const list_t *temp;
+	const list_t *temp = h;
 
-	if (h != NULL)
-	{
-	temp = h;
 	while (temp != NULL)
 	{
 		i++;
@@ -29,9 +26,4 @@ size_t print_list(const list_t *h)
 		temp = temp->next;
 	}
 	return (i);
-	else
-	{
-		printf("%u", i);
-		return (i)
-	}
 }
