@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
- *
+ * listint_len - lists number of nodes
+ * @h: a pointer to head
+ * Return: number of elements
  */
 size_t listint_len(const listint_t *h)
 {
