@@ -1,54 +1,45 @@
 #include "lists.h"
 #include <stdlib.h>
+
 /**
- * insert_nodeint_at_index - inserts node at index
- * @head: pointer to pointer to head
- * @idx: the index
- * @n: data to pass as n
- * Return: pointer to new_node, else NULL
+ * insert_nodeint_at_index - Inserts a new node at a given position
+ * @head: Pointer to the pointer to the first node of the list
+ * @idx: Index of the position where the new node should be added (starting at 0)
+ * @n: Integer value to be stored in the new node
+ * Return: Address of the new node, or NULL if it failed
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *new_node;
-	listint_t *prev_node;
-	listint_t *trav_node;
-	unsigned int count = 0;
+	listint_t *new_node, *temp;
+	unsigned int i = 0;
 
 	if (head == NULL)
-	{
-		return (NULL);
-	}
+	return (NULL);
+
 	new_node = malloc(sizeof(listint_t));
 	if (new_node == NULL)
-	{
-		return (NULL);
-	}
+	return (NULL);
+
 	new_node->n = n;
-	trav_node = *head;
-	if (*head == NULL)
+	new_node->next = NULL;
+	if (idx == 0)
 	{
-		new_node->next = NULL;
-		*head = new_node;
-		return (new_node);
+	new_node->next = *head;
+	*head = new_node;
+	return (new_node);
 	}
-	prev_node = NULL;
-	while (trav_node != NULL)
+	temp = *head;
+	while (temp != NULL && i < idx - 1)
 	{
-		if (count == idx)
-		{
-			new_node->next = trav_node;
-			prev_node->next = new_node;
-			return (new_node);
-		}
-		count++;
-		prev_node = trav_node;
-		trav_node = trav_node->next;
+	temp = temp->next;
+	i++;
 	}
-	if (count == idx)
+	if (temp == NULL || i != idx - 1)
 	{
-		prev_node->next = new_node;
-		return (new_node);
-	}
 	free(new_node);
 	return (NULL);
+	}
+	new_node->next = temp->next;
+	temp->next = new_node;
+	return (new_node);
 }
