@@ -1,7 +1,9 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
- *
+ * pop_listint - deletes and return the data
+ * @head: pointer to pointer to head
+ * Return: number indeleted node
  */
 int pop_listint(listint_t **head)
 {
