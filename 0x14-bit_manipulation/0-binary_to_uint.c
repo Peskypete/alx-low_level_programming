@@ -14,7 +14,7 @@ unsigned int binary_to_uint(const char *b)
 	int bit;
 
 	if (b == NULL)
-        	return (0);
+	return (0);
 
 	while (*b)
 	{
@@ -25,7 +25,7 @@ unsigned int binary_to_uint(const char *b)
 
 	result = (result << 1) | bit;
 
-        	++b;
+	++b;
 	}
 
 	return (result);
